@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portfolio</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/carousel.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/top-button.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <main>
+        <header>
+            <nav>
+                <div>
+                    <a class="nav__logo" href="{% url 'article:list' %}"><img
+                            src="{% static 'images/kun-uz-logo.svg' %}" alt="kunuz logo"></a>
+                    <ul class="nav__ul">
+                        {% for category in categories %}
+                        <li><a href="{{ category.get_absolute_url }}">{{ category }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </nav>
+            <nav>
+            </nav>
+        </header>
+    </main>
+    {% block content %}
+
+    {% endblock content %}
+
+    <div id="button"></div>
+    <footer>
+        <div class="footer-menu">
+            <ul>
+                <li><a href="">Iformatsiya</a></li>
+                <li><a href="">Hamkorlar</a></li>
+                <li><a href="">Reklama</a></li>
+                <li><a href="">Aloqa</a></li>
+                <li><a href="">Saytlar Haqida</a></li>
+                <li><a href="">portfolio yaratuvchisi</a></li>
+            </ul>
+            <a href=""><img src="{% static 'css/icons/18plus-v2.svg' %}" alt=""></a>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-text">
+                <div class="footer-text_1">
+                    Portfoliolar sayti mening o'zimning saytim, va hamma yangi saytlarim
+                    shu portfoliolar saytimga birinchi bo'lib qo'shiladi, va mening ismim
+                    Karimov Zabirulloh Azizbekovich mening o'qituvchim Abduvahabov Abdunabi
+                    <br><br>All rights reserved © 2024
+                </div>
+                <div class="footer-text_2">
+                    <ul>
+                        <li>👨‍🎓Abduvahabov Abdunabi(mentor)</li>
+                        <li>👨‍💻Karimov Zabirulloh</li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <ul class="social-items">
+                <li><a href=""><img src="{% static 'css/icons/social-youtube.svg' %}" alt=""></a></li>
+                <li><a href="https://t.me/UlugbekKhatamjonov"><img src="{% static 'css/icons/social-telegram.svg' %}"
+                            alt=""></a></li>
+                <li><a href=""><img src="{% static 'css/icons/social-facebook.svg' %}" alt=""></a></li>
+                <li><a href=""><img src="{% static 'css/icons/social-twitter.svg' %}" alt=""></a></li>
+                <li><a href=""><img src="{% static 'css/icons/social-instagram.svg' %}" alt=""></a></li>
+                <li><a class="t" href=""><img src="{% static 'css/icons/social-rss.svg' %}" alt=""></a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="{% static 'js/index.js' %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+<div class="right__recommended">
+    <a class="aylana-label" href="#"><span>Eng so'ngi saytlar</span></a>
+    <ul>
+        {% for site in sites %}
+            <li class="right__news_lenta">
+                <a href="{{ site.get_absolute_url }}">
+                    <div><span class="time-ui">{{ site.created_at|date:"d/m/Y | f"}}</span></div>
+                    <p>{{ site.title }}</p>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
